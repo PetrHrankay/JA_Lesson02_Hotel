@@ -1,6 +1,7 @@
 package engeto.ja.lesson02.hotel;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Guest {
     private String name;
@@ -44,4 +45,10 @@ public class Guest {
     }
     // endregion
 
+
+    @Override
+    public String toString() {
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("d. M. yyyy");
+        return name + " " + surname + " " + "(" + birthDate.format(dateFormatter) + ")";
+    }
 }
