@@ -11,7 +11,7 @@ public class Booking {
     private Room room;
     private LocalDate startOfReservation;
     LocalDate endOfReservation;
-    private List<Guest> otherGuests;
+    private List<Guest> otherGuests = null;
     private boolean isVacationStay;
 
     public Booking(Guest guest, Room room, LocalDate startOfReservation, LocalDate endOfReservation, List<Guest> otherGuests, boolean isVacationStay) {
@@ -28,7 +28,7 @@ public class Booking {
         this.room = room;
         this.startOfReservation = startOfReservation;
         this.endOfReservation = endOfReservation;
-        this.otherGuests = new ArrayList<>();
+        this.otherGuests = null;
         this.isVacationStay = isVacationStay;
     }
 
@@ -96,7 +96,9 @@ public class Booking {
     @Override
     public String toString() {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("d. M. yyyy");
-        return guest + "--> " + room + " " + "---" + "From: " + startOfReservation.format(dateFormatter) + "   To: " +
-                endOfReservation.format(dateFormatter) + "---";
+        return guest + "--> " + room + " " + "---" + "From: " +
+                startOfReservation.format(dateFormatter) + " To: " +
+                endOfReservation.format(dateFormatter) + "---" + "Other guest: " +
+                otherGuests + ". Is it vacation stay? " + isVacationStay;
     }
 }
