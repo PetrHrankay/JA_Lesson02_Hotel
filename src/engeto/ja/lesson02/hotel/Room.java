@@ -58,4 +58,16 @@ public class Room {
         this.pricePerNight = pricePerNight;
     }
     //endregion
+
+
+    @Override
+    public String toString() {
+        return
+                "Room " + roomNumber +
+                " ___ Beds: " + numberOfBeds +
+                ", Balcony: " + hasBalcony +
+                ", SeaView: " + hasSeaView +
+                ", Price per night: " + pricePerNight + " CZK";
+    }
 }
+
